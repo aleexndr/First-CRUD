@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5 mb-5">
+            <form action="/signup/" method="POST" class="card card-body">
+
+                <h1 class="text-center mb-4">Registrarte</h1>
+
+                {{error}}
+                {% csrf_token %}
+                
+                <div class="py-3">
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Usuario" required="">
+                        <label for="username">Usuario</label>
+                    </div>
+    
+                    <p>Solo letras, dígitos y @/./+/-/_.</p> 
+                </div>
+              
+                <div class="py-3">
+                    <div class="form-floating mb-2">
+                        <input type="password" class="form-control" name="password1" id="floatingPassword" placeholder="Contraseña" required="">
+                        <label for="password1">Contraseña</label>
+                    </div>
+    
+                    <li>Su contraseña debe contener al menos 8 caracteres.</li>
+                    <li>Su contraseña no puede ser una contraseña de uso común.</li>
+                    <li>Su contraseña no puede ser completamente numérica.</li>
+                </div>
+
+                <div class="py-3">
+                    <div class="form-floating mb-2">
+                        <input type="password" class="form-control" name="password2" id="floatingPassword" placeholder="Confirmar contraseña" required="">
+                        <label for="password2">Confirmar contraseña</label>
+                    </div>
+    
+                    <p>Ingrese la misma contraseña que antes, para verificación.</p>
+                </div>
+
+                <button class="btn btn-secondary">
+                    Registrar
+                </button>
+    
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

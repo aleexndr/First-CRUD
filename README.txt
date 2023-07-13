@@ -1,0 +1,2 @@
+Este es mi primer projecto de un crud en django con python
+he utilizado html para las plantillas y... la version de python que utilize es la 3.11 tambien estoy utilizando git para el manejo de las versiones de mi programa
